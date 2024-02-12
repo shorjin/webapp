@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title Character Limit Example</title>
+</head>
+<body>
+    <form>
+        <label for="postTitle">Post Title:</label>
+        <input type="text" id="postTitle" name="postTitle" oninput="limitTitleLength(this, 10)" maxlength="10">
+        <span id="charCount">10 characters remaining</span>
+    </form>
+
+    <script>
+        function limitTitleLength(input, maxLength) {
+            if (input.value.length > maxLength) {
+                input.value = input.value.substring(0, maxLength);
+            }
+            document.getElementById('charCount').textContent = (maxLength - input.value.length) + " characters remaining";
+        }
+    </script>
+</body>
+</html>
